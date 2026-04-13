@@ -237,7 +237,7 @@ export default async function BlogPost({ params }: Props) {
             lifetime access — for just $222.
           </p>
           <Link
-            href="/#pricing"
+            href="https://guidancebusiness.com"
             style={{
               background: "#C4882A",
               color: "#0F0D0A",

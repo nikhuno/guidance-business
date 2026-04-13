@@ -37,7 +37,7 @@ export default function BlogIndex() {
           Guidance Business
         </Link>
         <Link
-          href="/#pricing"
+          href="https://guidancebusiness.com"
           style={{
             background: "#C4882A",
             color: "#0F0D0A",
@@ -209,7 +209,7 @@ export default function BlogIndex() {
           Get the complete system for $222.
         </p>
         <Link
-          href="/#pricing"
+          href="https://guidancebusiness.com"
           style={{
             background: "#C4882A",
             color: "#0F0D0A",
