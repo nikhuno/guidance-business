@@ -48,7 +48,7 @@ export default function BlogIndex() {
             textDecoration: "none",
           }}
         >
-          Get the Course →
+          Build Your Guidance Business →
         </Link>
       </nav>
 
@@ -206,7 +206,7 @@ export default function BlogIndex() {
             marginBottom: "1.75rem",
           }}
         >
-          Get the complete system for $222.
+          A complete system for guides, coaches, and practitioners.
         </p>
         <Link
           href="https://guidancebusiness.com"
@@ -220,7 +220,7 @@ export default function BlogIndex() {
             textDecoration: "none",
           }}
         >
-          Get the Course →
+          Build Your Guidance Business →
         </Link>
       </section>
 

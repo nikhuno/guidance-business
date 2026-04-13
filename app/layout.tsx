@@ -20,6 +20,9 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "w1uNHpVv8BUUQ8obuiUsP1p6-84SZu35tmf0pmxhvuQ",
+  },
   title: "Guidance Business — Build a Business Around Your Wisdom",
   description:
     "A complete system for coaches, guides, and practitioners who want to earn $5–20K/month without burning out or selling their soul.",

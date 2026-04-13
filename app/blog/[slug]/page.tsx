@@ -234,7 +234,7 @@ export default async function BlogPost({ params }: Props) {
             }}
           >
             Get the complete system — 6 modules, implementation workbooks, and
-            lifetime access — for just $222.
+            lifetime access — for just .
           </p>
           <Link
             href="https://guidancebusiness.com"
@@ -249,7 +249,7 @@ export default async function BlogPost({ params }: Props) {
               display: "inline-block",
             }}
           >
-            Get the Course — $222 →
+            Get the Course —  →
           </Link>
         </div>
       </article>
