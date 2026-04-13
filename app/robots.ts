@@ -32,6 +32,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://guidancebusiness.com/sitemap.xml",
+    sitemap: "https://blog.guidancebusiness.com/sitemap.xml",
   };
 }
