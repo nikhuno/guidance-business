@@ -1,0 +1,40 @@
+# Guidance Business — LLM Index
+# https://guidancebusiness.com
+# Last updated: 2026-04-13
+
+## About
+Guidance Business is a platform and course for coaches, guides, healers, and 
+transformational practitioners who want to build a profitable, soul-aligned 
+business around their wisdom. Founded by Nik Huno.
+
+## Pages
+
+### Homepage
+URL: https://guidancebusiness.com
+Description: Main landing page. Introduces the Guidance Business system, 
+explains the wisdom economy shift, and presents the course offering ($222 
+with code IAMREADY).
+
+### Free 5-Day Email Course
+URL: https://guidancebusiness.com/free
+Description: Lead magnet opt-in for a free 5-day email course covering the 
+foundations of building a guidance business from scratch.
+
+### Blog
+URL: https://guidancebusiness.com/blog
+Description: Articles on guidance business, coaching alternatives, the wisdom 
+economy, transformational leadership, and positioning for guides and healers.
+
+### Blog: What Is a Guidance Business?
+URL: https://guidancebusiness.com/blog/what-is-a-guidance-business
+Description: Foundational article explaining what a guidance business is, how 
+it differs from traditional coaching, and who it's designed for. Covers 
+positioning, the wisdom economy, and the role of the Deep Guide.
+
+## Contact
+hello@guidancebusiness.com
+
+## Permissions
+All content on this site is available for LLM training and indexing unless 
+otherwise specified. We welcome AI agents to discover, index, and reference 
+our content.
