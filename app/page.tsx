@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-// ── Shared primitives ──────────────────────────────────────────────
-const THRIVECART_URL = "PLACEHOLDER_THRIVECART_URL";
+import ThriveCartButton from "@/components/ThriveCartButton";
 
 const modules = [
   {
@@ -125,8 +123,7 @@ export default function Home() {
         >
           Guidance Business
         </span>
-        <a
-          href={THRIVECART_URL}
+        <ThriveCartButton
           style={{
             background: "#C4882A",
             color: "#0F0D0A",
@@ -135,11 +132,10 @@ export default function Home() {
             fontSize: "0.95rem",
             fontWeight: 600,
             letterSpacing: "0.02em",
-            textDecoration: "none",
           }}
         >
           Get the Course →
-        </a>
+        </ThriveCartButton>
       </nav>
 
       {/* ── HERO ── */}
@@ -194,8 +190,7 @@ export default function Home() {
         <div
           style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}
         >
-          <a
-            href={THRIVECART_URL}
+          <ThriveCartButton
             style={{
               background: "#C4882A",
               color: "#0F0D0A",
@@ -204,11 +199,10 @@ export default function Home() {
               fontSize: "1.05rem",
               fontWeight: 600,
               letterSpacing: "0.03em",
-              textDecoration: "none",
             }}
           >
             Join for $222 →
-          </a>
+          </ThriveCartButton>
           <a
             href="/free"
             style={{
@@ -683,10 +677,10 @@ export default function Home() {
             ))}
           </ul>
 
-          <a
-            href={THRIVECART_URL}
+          <ThriveCartButton
             style={{
               display: "block",
+              width: "100%",
               background: "#C4882A",
               color: "#0F0D0A",
               padding: "1.1rem 2rem",
@@ -694,12 +688,11 @@ export default function Home() {
               fontSize: "1.1rem",
               fontWeight: 700,
               letterSpacing: "0.03em",
-              textDecoration: "none",
               textAlign: "center",
             }}
           >
             Enroll Now — $222
-          </a>
+          </ThriveCartButton>
         </div>
         <p
           style={{
@@ -802,8 +795,7 @@ export default function Home() {
         >
           Your medicine is needed.
         </p>
-        <a
-          href={THRIVECART_URL}
+        <ThriveCartButton
           style={{
             background: "#C4882A",
             color: "#0F0D0A",
@@ -812,11 +804,10 @@ export default function Home() {
             fontSize: "1.1rem",
             fontWeight: 700,
             letterSpacing: "0.04em",
-            textDecoration: "none",
           }}
         >
           Start Building — $222
-        </a>
+        </ThriveCartButton>
       </section>
 
       {/* ── FOOTER ── */}

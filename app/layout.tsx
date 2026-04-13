@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, EB_Garamond } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -48,6 +49,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cormorant.variable} ${ebGaramond.variable}`}>
         {children}
+        <Script
+          src="//tinder.thrivecart.com/embed/v2/thrivecart.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
