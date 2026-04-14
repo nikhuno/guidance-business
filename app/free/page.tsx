@@ -1,252 +1,439 @@
+"use client";
+
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "5 Days to Your Guidance Business — Free Email Course",
-  description:
-    "A free 5-day email course for coaches, guides, and practitioners. Learn the foundations of a profitable, soul-aligned guidance business.",
-};
-
-const lessons = [
-  "Day 1: What a guidance business actually is — and why you already qualify",
-  "Day 2: The positioning formula that makes you unmistakable (without an audience)",
-  "Day 3: How to package your wisdom into an offer people pay premium for",
-  "Day 4: Pricing with confidence — the psychology of premium guidance",
-  "Day 5: Your first client roadmap — a 30-day action plan",
-];
+// Note: metadata must be in a separate server component if needed
+// Using inline title for now
 
 export default function FreePage() {
   return (
-    <main
-      style={{
+    <>
+      <style>{`
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        ::placeholder { color: #4A4540; }
+        input:focus { border-color: #C4882A !important; outline: none; }
+        .submit-btn:hover { background: #D4982A !important; }
+        .fade-in { animation: fadeIn 0.8s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .pain-item { border-bottom: 1px solid #1E1A16; }
+        .pain-item:first-child { border-top: 1px solid #1E1A16; }
+      `}</style>
+
+      <main style={{
         background: "#0F0D0A",
         color: "#D8CFC4",
         minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "2rem",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "580px",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
+        fontFamily: "'EB Garamond', Georgia, serif",
+      }}>
+
         {/* Logo */}
-        <div style={{ marginBottom: "3.5rem" }}>
-          <a
-            href="/"
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontStyle: "italic",
-              fontSize: "1.3rem",
-              color: "#8A7F74",
-              textDecoration: "none",
-            }}
-          >
+        <div style={{ padding: "2rem", textAlign: "center" }}>
+          <a href="https://guidancebusiness.com" style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontStyle: "italic",
+            fontSize: "1.1rem",
+            color: "#5A5450",
+            textDecoration: "none",
+            letterSpacing: "0.05em",
+          }}>
             Guidance Business
           </a>
         </div>
 
-        {/* Badge */}
-        <div
-          style={{
+        {/* Hero */}
+        <section style={{
+          maxWidth: "640px",
+          margin: "0 auto",
+          padding: "3rem 2rem 0",
+          textAlign: "center",
+          className: "fade-in",
+        }}>
+
+          <div style={{
             display: "inline-block",
-            border: "1px solid #C4882A",
-            padding: "0.4rem 1rem",
-            marginBottom: "1.75rem",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-eb-garamond)",
-              fontSize: "0.8rem",
-              letterSpacing: "0.15em",
+            border: "1px solid rgba(196, 136, 42, 0.4)",
+            padding: "0.35rem 1rem",
+            marginBottom: "2rem",
+          }}>
+            <span style={{
+              fontFamily: "'EB Garamond', Georgia, serif",
+              fontSize: "0.75rem",
+              letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#C4882A",
-            }}
-          >
-            Free 5-Day Email Course
-          </span>
-        </div>
+            }}>
+              Free · 5 Letters · 9 Days
+            </span>
+          </div>
 
-        {/* Headline */}
-        <h1
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontSize: "clamp(2.4rem, 6vw, 3.8rem)",
-            fontWeight: 500,
-            color: "#D8CFC4",
-            lineHeight: 1.1,
-            marginBottom: "1.25rem",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          5 Days to Your
-          <br />
-          <em>Guidance Business</em>
-        </h1>
+          <h1 style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "clamp(2.8rem, 8vw, 4.8rem)",
+            fontWeight: 400,
+            lineHeight: 1.05,
+            letterSpacing: "-0.02em",
+            color: "#E8DFD4",
+            marginBottom: "0.5rem",
+          }}>
+            You are not a coach.
+          </h1>
+          <h1 style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "clamp(2.8rem, 8vw, 4.8rem)",
+            fontWeight: 400,
+            lineHeight: 1.05,
+            letterSpacing: "-0.02em",
+            fontStyle: "italic",
+            color: "#C4882A",
+            marginBottom: "2rem",
+          }}>
+            You are a guide.
+          </h1>
 
-        <p
-          style={{
-            fontFamily: "var(--font-eb-garamond)",
+          <p style={{
             fontSize: "1.15rem",
-            lineHeight: 1.7,
+            lineHeight: 1.75,
             color: "#8A7F74",
-            marginBottom: "2.5rem",
-          }}
-        >
-          Five emails. Five foundations. The clarity you need to start building
-          a guidance business that earns and endures.
-        </p>
+            marginBottom: "1rem",
+          }}>
+            A free email series for people who sense there&apos;s a different kind of practice available to them —
+            one that feels true, not performed. Five honest letters. No modules, no worksheets.
+            Just the things I wish someone had told me.
+          </p>
+        </section>
 
-        {/* Lessons */}
-        <ul
-          style={{
-            listStyle: "none",
-            padding: 0,
-            margin: "0 0 2.5rem",
-            textAlign: "left",
-          }}
-        >
-          {lessons.map((lesson, i) => (
-            <li
-              key={i}
+        {/* Pain points */}
+        <section style={{
+          maxWidth: "580px",
+          margin: "3.5rem auto 0",
+          padding: "0 2rem",
+        }}>
+          {[
+            "You've done the inner work. You have real gifts. But the word "coach" has always felt like someone else's costume.",
+            "You know something is there — a calling, a way of working — you just can't quite name it yet. Or charge for it.",
+            "You've looked at the scripts, the funnels, the discovery call templates. Something in you keeps saying: not like this.",
+          ].map((text, i) => (
+            <div key={i} className="pain-item" style={{
+              padding: "1.2rem 0",
+              display: "flex",
+              gap: "1rem",
+              alignItems: "flex-start",
+            }}>
+              <span style={{ color: "#C4882A", fontSize: "1.2rem", flexShrink: 0, paddingTop: "0.15rem" }}>—</span>
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.65, color: "#9A8F84" }}>{text}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Nik's story — short */}
+        <section style={{
+          maxWidth: "580px",
+          margin: "4rem auto 0",
+          padding: "0 2rem",
+          borderLeft: "2px solid #C4882A",
+          paddingLeft: "2rem",
+        }}>
+          <p style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "1.35rem",
+            fontStyle: "italic",
+            lineHeight: 1.6,
+            color: "#C8BFB4",
+            marginBottom: "1.25rem",
+          }}>
+            "I had my first panic attack in a bathroom stall at Bloomberg.
+            Six figures. Private chauffeur waiting downstairs. And I couldn&apos;t stop shaking."
+          </p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#7A7168", marginBottom: "0.75rem" }}>
+            I spent five years performing a version of success that had nothing to do with me.
+            After leaving, I tried everything — startups, photography, consulting, certifications.
+            None of it worked until I stopped trying to solve an identity problem with a strategy.
+          </p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#7A7168", marginBottom: "1.25rem" }}>
+            Today I live in a small house in southern Italy, surrounded by olive trees.
+            I work about three hours a day. I wake up without an alarm.
+            I photograph, write, cook with my partner Chiara, and run a guidance business
+            that earns more than I ever made in finance.
+          </p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#7A7168" }}>
+            The story of how I got from that bathroom stall to here is what these letters are about.
+          </p>
+          <div style={{ marginTop: "1.25rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <div style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "50%",
+              background: "#2A2520",
+              border: "1px solid #3A3530",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "1rem",
+              color: "#C4882A",
+              fontStyle: "italic",
+            }}>N</div>
+            <div>
+              <p style={{ fontSize: "0.9rem", color: "#9A8F84" }}>Nik Huno</p>
+              <p style={{ fontSize: "0.8rem", color: "#5A5450" }}>Puglia, Italy · 430+ guides</p>
+            </div>
+          </div>
+        </section>
+
+        {/* What you'll receive */}
+        <section style={{
+          maxWidth: "580px",
+          margin: "4.5rem auto 0",
+          padding: "0 2rem",
+        }}>
+          <p style={{
+            fontSize: "0.75rem",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "#5A5450",
+            marginBottom: "1.5rem",
+          }}>
+            What you&apos;ll receive
+          </p>
+
+          {[
+            { day: "Letter 1", title: "From that bathroom stall to here", sub: "The story behind what a guidance business actually is — and why it might be exactly what you've been circling." },
+            { day: "Letter 2", title: "You are not a coach", sub: "The distinction that changes everything. What a guide is, how it differs, and why that $10 session was the moment everything shifted." },
+            { day: "Letter 3", title: "The thing the personality tests keep missing", sub: "Your shadow pattern. The unlived version of you that's been pulling the strings — and how to start working with it instead of against it." },
+            { day: "Letter 4", title: "What happens when it clicks", sub: "Real stories. Real numbers. People who were exactly where you are — and what moved for them when the foundation was right." },
+            { day: "Letter 5", title: "The thing I keep wanting to say to you", sub: "A personal letter. No teaching, no framework. Just the thing that matters most after everything else." },
+          ].map((item, i) => (
+            <div key={i} style={{
+              padding: "1.25rem 0",
+              borderBottom: "1px solid #1A1714",
+              display: "flex",
+              gap: "1.25rem",
+            }}>
+              <div style={{
+                flexShrink: 0,
+                width: "72px",
+                paddingTop: "0.2rem",
+              }}>
+                <span style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "0.8rem",
+                  color: "#C4882A",
+                  letterSpacing: "0.05em",
+                }}>{item.day}</span>
+              </div>
+              <div>
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "1.15rem",
+                  color: "#C8BFB4",
+                  marginBottom: "0.35rem",
+                  lineHeight: 1.3,
+                }}>{item.title}</p>
+                <p style={{ fontSize: "0.9rem", color: "#6A6158", lineHeight: 1.55 }}>{item.sub}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Form */}
+        <section style={{
+          maxWidth: "480px",
+          margin: "4.5rem auto 0",
+          padding: "0 2rem",
+          textAlign: "center",
+        }}>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "1.9rem",
+            fontWeight: 400,
+            color: "#E8DFD4",
+            marginBottom: "0.5rem",
+            lineHeight: 1.2,
+          }}>
+            Begin the series.
+          </h2>
+          <p style={{
+            fontSize: "1rem",
+            color: "#6A6158",
+            marginBottom: "2rem",
+            lineHeight: 1.6,
+          }}>
+            Free. The first letter arrives within the hour.
+          </p>
+
+          {/* Kit Form — replace action URL with your Kit form endpoint */}
+          {/* Kit form action: https://app.kit.com/forms/PLACEHOLDER_KIT_FORM_ID/subscriptions */}
+          <form
+            action="https://app.kit.com/forms/PLACEHOLDER_KIT_FORM_ID/subscriptions"
+            method="post"
+            data-sv-form="PLACEHOLDER_KIT_FORM_ID"
+            data-uid="PLACEHOLDER_KIT_UID"
+            style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}
+          >
+            <input
+              type="text"
+              name="fields[first_name]"
+              placeholder="First name"
+              required
               style={{
-                fontFamily: "var(--font-eb-garamond)",
+                background: "#141210",
+                border: "1px solid #2A2520",
+                color: "#D8CFC4",
+                padding: "1rem 1.25rem",
+                fontFamily: "'EB Garamond', Georgia, serif",
                 fontSize: "1rem",
-                lineHeight: 1.6,
-                color: "#8A7F74",
-                padding: "0.9rem 0",
-                borderBottom: "1px solid #1E1A16",
-                display: "flex",
-                gap: "0.75rem",
-                alignItems: "flex-start",
+                width: "100%",
+                transition: "border-color 0.2s",
+              }}
+            />
+            <input
+              type="email"
+              name="email_address"
+              placeholder="Email address"
+              required
+              style={{
+                background: "#141210",
+                border: "1px solid #2A2520",
+                color: "#D8CFC4",
+                padding: "1rem 1.25rem",
+                fontFamily: "'EB Garamond', Georgia, serif",
+                fontSize: "1rem",
+                width: "100%",
+                transition: "border-color 0.2s",
+              }}
+            />
+            <button
+              type="submit"
+              className="submit-btn"
+              style={{
+                background: "#C4882A",
+                color: "#0A0806",
+                padding: "1.1rem 2rem",
+                fontFamily: "'EB Garamond', Georgia, serif",
+                fontSize: "1.05rem",
+                fontWeight: 700,
+                letterSpacing: "0.02em",
+                border: "none",
+                cursor: "pointer",
+                width: "100%",
+                transition: "background 0.2s",
               }}
             >
-              <span
-                style={{
-                  color: "#C4882A",
-                  fontFamily: "var(--font-cormorant)",
-                  fontSize: "1.1rem",
-                  flexShrink: 0,
-                  paddingTop: "0.1rem",
-                }}
-              >
-                ✦
-              </span>
-              {lesson}
-            </li>
-          ))}
-        </ul>
+              Begin Becoming the Guide →
+            </button>
+          </form>
 
-        {/* Form — Kit placeholder */}
-        {/* 
-          PLACEHOLDER: Replace this form with your Kit (ConvertKit) embed.
-          Form ID: YOUR_KIT_FORM_ID
-          
-          To embed:
-          1. Go to Kit → Forms → select form → Embed
-          2. Replace the form below with the Kit-generated HTML/JS embed
-          OR
-          3. Use Kit's API endpoint for custom forms
-        */}
-        <form
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-          }}
-        >
-          <input
-            type="text"
-            name="first_name"
-            placeholder="Your first name"
-            required
-            style={{
-              background: "#1A1714",
-              border: "1px solid #2A2520",
-              color: "#D8CFC4",
-              padding: "1rem 1.25rem",
-              fontFamily: "var(--font-eb-garamond)",
-              fontSize: "1rem",
-              outline: "none",
-              width: "100%",
-            }}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            required
-            style={{
-              background: "#1A1714",
-              border: "1px solid #2A2520",
-              color: "#D8CFC4",
-              padding: "1rem 1.25rem",
-              fontFamily: "var(--font-eb-garamond)",
-              fontSize: "1rem",
-              outline: "none",
-              width: "100%",
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              background: "#C4882A",
-              color: "#0F0D0A",
-              padding: "1.1rem 2rem",
-              fontFamily: "var(--font-eb-garamond)",
-              fontSize: "1.05rem",
-              fontWeight: 700,
-              letterSpacing: "0.03em",
-              border: "none",
-              cursor: "pointer",
-              width: "100%",
-            }}
-          >
-            Send Me the Free Course →
-          </button>
-        </form>
-
-        <p
-          style={{
-            fontFamily: "var(--font-eb-garamond)",
-            fontSize: "0.85rem",
-            color: "#8A7F74",
-            marginTop: "1rem",
-          }}
-        >
-          No spam. No pitching. Unsubscribe anytime.
-        </p>
-
-        {/* Divider */}
-        <div
-          style={{
-            borderTop: "1px solid #2A2520",
-            marginTop: "3rem",
-            paddingTop: "2rem",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-eb-garamond)",
-              fontSize: "0.9rem",
-              color: "#8A7F74",
-            }}
-          >
-            Already know you&apos;re ready?{" "}
-            <a
-              href="/#pricing"
-              style={{ color: "#C4882A", textDecoration: "none" }}
-            >
-              Get the full course for $222 →
-            </a>
+          <p style={{ fontSize: "0.82rem", color: "#4A4540", marginTop: "1rem", lineHeight: 1.5 }}>
+            No spam. No pitching. Unsubscribe anytime.
+            I read every reply personally — no team, no automation behind the inbox.
           </p>
-        </div>
-      </div>
-    </main>
+        </section>
+
+        {/* Testimonials */}
+        <section style={{
+          maxWidth: "760px",
+          margin: "5rem auto 0",
+          padding: "0 2rem",
+        }}>
+          <p style={{
+            fontSize: "0.75rem",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "#5A5450",
+            marginBottom: "2.5rem",
+            textAlign: "center",
+          }}>
+            From guides who&apos;ve walked this path
+          </p>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "1.5rem",
+          }}>
+            {[
+              {
+                quote: "I've struggled for years until I came across this unique approach. The payment notification from my first client is testament to that.",
+                name: "Norbert",
+                detail: "First client: $2,500",
+              },
+              {
+                quote: "It didn't feel like selling at all. It felt like a natural conversation about how I could help.",
+                name: "Sarah",
+                detail: "First client: $3,000 in 6 weeks",
+              },
+              {
+                quote: "I took 6-7 courses, worked with mentors, paid a few good thousands. After this, I feel I don't need anything else anymore.",
+                name: "Mihai",
+                detail: "First results: €3,000",
+              },
+            ].map((t, i) => (
+              <div key={i} style={{
+                background: "#13110E",
+                border: "1px solid #1E1A16",
+                padding: "1.5rem",
+              }}>
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "1.05rem",
+                  fontStyle: "italic",
+                  lineHeight: 1.65,
+                  color: "#9A9188",
+                  marginBottom: "1.25rem",
+                }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p style={{ fontSize: "0.85rem", color: "#C4882A", marginBottom: "0.2rem" }}>{t.name}</p>
+                <p style={{ fontSize: "0.8rem", color: "#4A4540" }}>{t.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* What this is and isn't */}
+        <section style={{
+          maxWidth: "580px",
+          margin: "4.5rem auto 0",
+          padding: "0 2rem",
+          textAlign: "center",
+        }}>
+          <p style={{
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "1.3rem",
+            fontStyle: "italic",
+            color: "#7A7168",
+            lineHeight: 1.7,
+          }}>
+            This is not a lead magnet.<br />
+            It&apos;s not a preview of a course.<br />
+            It&apos;s five honest letters about building something real.<br />
+            From someone who did it the hard way, so you might not have to.
+          </p>
+        </section>
+
+        {/* Footer */}
+        <footer style={{
+          maxWidth: "580px",
+          margin: "5rem auto 0",
+          padding: "2.5rem 2rem 3rem",
+          borderTop: "1px solid #1A1714",
+          textAlign: "center",
+        }}>
+          <a
+            href="https://guidancebusiness.com"
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontStyle: "italic",
+              fontSize: "0.95rem",
+              color: "#4A4540",
+              textDecoration: "none",
+            }}
+          >
+            guidancebusiness.com
+          </a>
+        </footer>
+
+      </main>
+    </>
   );
 }
