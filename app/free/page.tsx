@@ -2,14 +2,44 @@
 
 import { useEffect } from "react";
 
+const KIT_FORM_HTML = `
+<form
+  action="https://app.kit.com/forms/9327364/subscriptions"
+  class="seva-form formkit-form"
+  method="post"
+  data-sv-form="9327364"
+  data-uid="99a62dce44"
+  data-format="inline"
+  data-version="5"
+  data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;redirect&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;https://blog.guidancebusiness.com/welcome&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}"
+>
+  <div data-style="clean">
+    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+      <div class="formkit-field">
+        <input class="formkit-input" aria-label="First Name" name="fields[first_name]" placeholder="First name" type="text" />
+      </div>
+      <div class="formkit-field">
+        <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email address" required="" type="email" />
+      </div>
+      <button data-element="submit" class="formkit-submit formkit-submit">
+        <div class="formkit-spinner"><div></div><div></div><div></div></div>
+        <span>Begin Becoming the Guide &rarr;</span>
+      </button>
+    </div>
+  </div>
+</form>
+`;
+
 export default function FreePage() {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://nik-huno.kit.com/99a62dce44/index.js";
+    script.src = "https://f.convertkit.com/ckjs/ck.5.js";
     script.async = true;
-    script.setAttribute("data-uid", "99a62dce44");
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
+    document.head.appendChild(script);
+    return () => {
+      if (document.head.contains(script)) document.head.removeChild(script);
+    };
   }, []);
   const painPoints = [
     "You've done the inner work. You have real gifts. But the word \"coach\" has always felt like someone else's costume.",
@@ -89,19 +119,21 @@ export default function FreePage() {
         .pain-item{border-bottom:1px solid #1E1A16;}
         .pain-item:first-child{border-top:1px solid #1E1A16;}
 
-        /* Kit form overrides — match dark theme */
-        .formkit-form{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;max-width:100%!important;}
-        .formkit-form *{font-family:'EB Garamond',Georgia,serif!important;}
-        .formkit-fields{display:flex!important;flex-direction:column!important;gap:0.9rem!important;}
-        .formkit-field{margin:0!important;}
-        .formkit-input{background:#141210!important;border:1px solid #2A2520!important;border-radius:0!important;color:#D8CFC4!important;padding:1rem 1.25rem!important;font-size:1rem!important;width:100%!important;}
-        .formkit-input:focus{border-color:#C4882A!important;outline:none!important;}
-        .formkit-input::placeholder{color:#3A3530!important;}
-        .formkit-submit{background:#C4882A!important;color:#0A0806!important;border-radius:0!important;border:none!important;padding:1.1rem 2rem!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:0.02em!important;width:100%!important;cursor:pointer!important;margin-top:0!important;}
-        .formkit-submit:hover{background:#D49930!important;}
-        .formkit-submit span{color:#0A0806!important;}
-        .formkit-guarantee,.formkit-powered-by-convertkit-container{display:none!important;}
-        [data-element="errors"]{color:#C4882A!important;font-size:0.85rem!important;}
+        /* Kit form overrides — dark theme */
+        .formkit-form[data-uid="99a62dce44"]{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;max-width:100%!important;}
+        .formkit-form[data-uid="99a62dce44"] *{font-family:'EB Garamond',Georgia,serif!important;box-sizing:border-box;}
+        .formkit-form[data-uid="99a62dce44"] [data-style="clean"]{padding:0!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-fields{display:flex!important;flex-direction:column!important;gap:0.9rem!important;flex-wrap:nowrap!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-field{margin:0!important;flex:unset!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-input{background:#141210!important;border:1px solid #2A2520!important;border-radius:0!important;color:#D8CFC4!important;padding:1rem 1.25rem!important;font-size:1rem!important;width:100%!important;line-height:1.4!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-input:focus{border-color:#C4882A!important;outline:none!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-input::placeholder{color:#3A3530!important;opacity:1!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-submit{background:#C4882A!important;color:#0A0806!important;border-radius:0!important;border:none!important;padding:0!important;font-size:1.05rem!important;font-weight:700!important;width:100%!important;cursor:pointer!important;margin:0!important;flex:unset!important;position:relative!important;overflow:hidden!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-submit > span{display:block!important;padding:1.1rem 2rem!important;color:#0A0806!important;letter-spacing:0.02em!important;font-weight:700!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-submit:hover > span{background:rgba(0,0,0,0.08)!important;}
+        .formkit-powered-by-convertkit-container{display:none!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-alert-error{background:#1a0a0a!important;border-color:#C4882A!important;color:#C4882A!important;border-radius:0!important;font-size:0.85rem!important;}
+        .formkit-form[data-uid="99a62dce44"] .formkit-alert:empty{display:none!important;}
       `}</style>
 
       {/* Logo */}
@@ -249,8 +281,8 @@ export default function FreePage() {
           Free. The first letter arrives within the hour.
         </p>
 
-        {/* Kit form renders here via useEffect script injection */}
-        <div data-uid="99a62dce44" />
+        {/* Kit form — ck.5.js loaded via useEffect, form HTML via dangerouslySetInnerHTML */}
+        <div dangerouslySetInnerHTML={{ __html: KIT_FORM_HTML }} />
 
         <p style={{ fontSize: "0.82rem", color: "#4A4540", marginTop: "1rem", lineHeight: 1.5 }}>
           No spam. No pitching. Unsubscribe anytime.
