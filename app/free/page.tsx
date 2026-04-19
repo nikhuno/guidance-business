@@ -1,6 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function FreePage() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://nik-huno.kit.com/99a62dce44/index.js";
+    script.async = true;
+    script.setAttribute("data-uid", "99a62dce44");
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
   const painPoints = [
     "You've done the inner work. You have real gifts. But the word \"coach\" has always felt like someone else's costume.",
     "You know something is there — a calling, a way of working — you just can't quite name it yet. Or charge for it.",
@@ -239,9 +249,8 @@ export default function FreePage() {
           Free. The first letter arrives within the hour.
         </p>
 
-        {/* Kit JS embed — form 9327364 / uid 99a62dce44 */}
-        {/* Redirect after subscribe → blog.guidancebusiness.com/welcome (set in Kit dashboard) */}
-        <script async data-uid="99a62dce44" src="https://nik-huno.kit.com/99a62dce44/index.js" />
+        {/* Kit form renders here via useEffect script injection */}
+        <div data-uid="99a62dce44" />
 
         <p style={{ fontSize: "0.82rem", color: "#4A4540", marginTop: "1rem", lineHeight: 1.5 }}>
           No spam. No pitching. Unsubscribe anytime.
