@@ -78,6 +78,20 @@ export default function FreePage() {
         .btn:hover{background:#D49930!important;}
         .pain-item{border-bottom:1px solid #1E1A16;}
         .pain-item:first-child{border-top:1px solid #1E1A16;}
+
+        /* Kit form overrides — match dark theme */
+        .formkit-form{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;max-width:100%!important;}
+        .formkit-form *{font-family:'EB Garamond',Georgia,serif!important;}
+        .formkit-fields{display:flex!important;flex-direction:column!important;gap:0.9rem!important;}
+        .formkit-field{margin:0!important;}
+        .formkit-input{background:#141210!important;border:1px solid #2A2520!important;border-radius:0!important;color:#D8CFC4!important;padding:1rem 1.25rem!important;font-size:1rem!important;width:100%!important;}
+        .formkit-input:focus{border-color:#C4882A!important;outline:none!important;}
+        .formkit-input::placeholder{color:#3A3530!important;}
+        .formkit-submit{background:#C4882A!important;color:#0A0806!important;border-radius:0!important;border:none!important;padding:1.1rem 2rem!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:0.02em!important;width:100%!important;cursor:pointer!important;margin-top:0!important;}
+        .formkit-submit:hover{background:#D49930!important;}
+        .formkit-submit span{color:#0A0806!important;}
+        .formkit-guarantee,.formkit-powered-by-convertkit-container{display:none!important;}
+        [data-element="errors"]{color:#C4882A!important;font-size:0.85rem!important;}
       `}</style>
 
       {/* Logo */}
@@ -225,47 +239,9 @@ export default function FreePage() {
           Free. The first letter arrives within the hour.
         </p>
 
-        {/* Kit form — replace PLACEHOLDER_KIT_FORM_ID with real ID from Kit dashboard */}
-        <form
-          action="https://app.kit.com/forms/PLACEHOLDER_KIT_FORM_ID/subscriptions"
-          method="post"
-          style={{ display: "flex", flexDirection: "column" as const, gap: "0.9rem" }}
-        >
-          <input
-            type="text"
-            name="fields[first_name]"
-            placeholder="First name"
-            required
-            style={{
-              background: s.inputBg, border: `1px solid ${s.inputBorder}`,
-              color: s.fg, padding: "1rem 1.25rem",
-              fontFamily: s.garamond, fontSize: "1rem", width: "100%",
-            }}
-          />
-          <input
-            type="email"
-            name="email_address"
-            placeholder="Email address"
-            required
-            style={{
-              background: s.inputBg, border: `1px solid ${s.inputBorder}`,
-              color: s.fg, padding: "1rem 1.25rem",
-              fontFamily: s.garamond, fontSize: "1rem", width: "100%",
-            }}
-          />
-          <button
-            type="submit"
-            className="btn"
-            style={{
-              background: s.amber, color: "#0A0806",
-              padding: "1.1rem 2rem", fontFamily: s.garamond,
-              fontSize: "1.05rem", fontWeight: 700, letterSpacing: "0.02em",
-              border: "none", cursor: "pointer", width: "100%",
-            }}
-          >
-            Begin Becoming the Guide &rarr;
-          </button>
-        </form>
+        {/* Kit JS embed — form 9327364 / uid 99a62dce44 */}
+        {/* Redirect after subscribe → blog.guidancebusiness.com/welcome (set in Kit dashboard) */}
+        <script async data-uid="99a62dce44" src="https://nik-huno.kit.com/99a62dce44/index.js" />
 
         <p style={{ fontSize: "0.82rem", color: "#4A4540", marginTop: "1rem", lineHeight: 1.5 }}>
           No spam. No pitching. Unsubscribe anytime.
